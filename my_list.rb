@@ -6,6 +6,10 @@ class MyList
   end
 
   def each
-    @list.each { |item| yield(item) if block_given? }
+    index = 0
+    while index < @list.length
+      yield(@list[index]) if block_given?
+      index += 1
+    end
   end
 end
